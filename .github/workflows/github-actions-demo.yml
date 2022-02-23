@@ -23,7 +23,7 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - name: Display the path
+      - name: run the test1
         run: |
           from sklearn import tree #导入需要的模块
           from sklearn.datasets import load_wine
