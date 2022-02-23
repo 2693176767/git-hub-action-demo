@@ -7,4 +7,4 @@ clf=tree.DecisionTreeClassifier(criterion="entropy")
 clf=clf.fit(Xtrain,Ytrain)
 score=clf.score(Xtest,Ytest)#返回预测准确度accuracy
 print(score)
-print(enviorment)
+print(github.event.inputs.mode )
