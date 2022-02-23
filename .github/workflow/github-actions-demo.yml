@@ -1,33 +1,36 @@
-on: 
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning' 
-        type: choice
-        options:
-        - info
-        - warning
-        - debug 
-      tags:
-        description: 'Test scenario tags'
-        required: false 
-        type: boolean
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true 
-
+name: My Workflow
+on: [push, pull_request]
 jobs:
-  log-the-inputs:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "Log level: $LEVEL"
-          echo "Tags: $TAGS"
-          echo "Environment: $ENVIRONMENT"
-        env:
-          LEVEL: ${{ github.event.inputs.logLevel }}
-          TAGS: ${{ github.event.inputs.tags }}
-          ENVIRONMENT: ${{ github.event.inputs.environment }}
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - name: Check Out Repository
+      id: checkout_repository
+      uses: actions/checkout@v2
+
+    # AML Workspace Action
+    - uses: Azure/aml-workspace@v1
+      id: aml_workspace
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    # AML Register Model Action
+    - uses: Azure/aml-registermodel@v1
+      id: aml_registermodel
+      with:
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        run_id:  "<your-run-id>"
+        experiment_name: "<your-experiment-name>"
+    
+    # Deploy model in Azure Machine Learning to ACI
+    - name: Deploy model
+      id: aml_deploy
+      uses: Azure/aml-deploy@v1
+      with:
+        # required inputs
+        azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+        model_name:  ${{ steps.aml_registermodel.outputs.model_name }}
+        model_version: ${{ steps.aml_registermodel.outputs.model_version }}
+        # optional inputs
+        parameters_file: "deploy.json"
