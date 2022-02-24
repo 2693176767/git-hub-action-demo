@@ -1,11 +1,11 @@
 name: "DecisionTree Machine Learning Deploy Action"
 description: "Deploy a registered model in your DecisionTree Machine Learning Workspace with this GitHub Action"
 inputs:
-  model_name:
-    description: "Name of the model that will be deployed"
+  development:
+    description: "Development of the model that will be deployed"
     required: true
-  model_version:
-    description: "Version of the model that will be deployed"
+  mode:
+    description: "Mode of the model that will be deployed"
     required: true
 outputs:
   service_scoring_uri:
