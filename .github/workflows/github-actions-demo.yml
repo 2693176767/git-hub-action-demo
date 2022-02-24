@@ -9,10 +9,12 @@ on:
       mode:
         description: 'Running mode'  
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Check Out Repository
+        id: checkout_repository
+        uses: actions/checkout@v2
       
       - name: Running dev env
         if: github.event.inputs.environment == 'development'
