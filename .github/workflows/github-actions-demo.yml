@@ -19,16 +19,16 @@ jobs:
       - name: Running prod env
         if: github.event.inputs.environment == 'production'
         run: echo "Running prod env with mode ${{ github.event.inputs.mode }}"
-      - uses: actions/checkout@v1
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.9
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
+      #- uses: actions/checkout@v1
+      #- name: Set up Python 3.9
+        #uses: actions/setup-python@v1
+        #with:
+          #python-version: 3.9
+      #- name: Install dependencies
+        #run: |
+          #python -m pip install --upgrade pip
           #pip install -r requirements.txt
-          pip install sklearn pytest 
+          #pip install sklearn pytest 
       #- name: Run the test1
         #run: |
           #python test1.py
