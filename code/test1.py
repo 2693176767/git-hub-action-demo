@@ -10,7 +10,7 @@ clf=clf.fit(Xtrain,Ytrain)
 score=clf.score(Xtest,Ytest)#返回预测准确度accuracy
 print(score)
 def main():
-    # Loading input values
+    Loading input values
     print("::debug::Loading input values")
     development = os.environ.get("INPUT_DEVELOPMENT", default=None)
     mode = os.environ.get("INPUT_MODE", default=None)
