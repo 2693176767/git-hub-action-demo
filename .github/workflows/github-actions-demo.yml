@@ -29,10 +29,10 @@ jobs:
           python -m pip install --upgrade pip
           #pip install -r requirements.txt
           pip install sklearn pytest 
-      - name: Run the test1
-        run: |
-          python test1.py
-      #- name: Deploy model to test1
-        #id: aml_deploy_test1
-        #uses: ./
+      #- name: Run the test1
+        #run: |
+          #python test1.py
+      - name: Deploy model to test1
+        id: aml_deploy_test1
+        uses: ./
 
