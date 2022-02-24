@@ -13,5 +13,5 @@ outputs:
   service_swagger_uri:
     description: "Swagger URI of the webservice that was created (only provided if delete_service_after_deployment is set to False)"
 runs:
-  using: "staging"
+  using: "docker"
   image: "Dockerfile"
