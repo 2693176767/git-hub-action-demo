@@ -11,9 +11,3 @@ clf=clf.fit(Xtrain,Ytrain)
 score=clf.score(Xtest,Ytest)#返回预测准确度accuracy
 print(score)
 
-def test_main_no_input():
-    """
-    Unit test to check the main function with no inputs
-    """
-    with pytest.raises(AMLConfigurationException):
-        assert main()
