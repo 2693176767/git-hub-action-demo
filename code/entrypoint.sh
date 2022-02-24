@@ -1,5 +1,5 @@
 #!/bin/sh
 
-set -e
+#set -e
 
-python /code/test1.py
+#python /code/test1.py
