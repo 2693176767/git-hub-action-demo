@@ -12,6 +12,8 @@ print(score)
 def main():
     # Loading input values
     print("::debug::Loading input values")
-    devlopment = os.environ.get("INPUT_DEVELOPMENT", default=None)
+    development = os.environ.get("INPUT_DEVELOPMENT", default=None)
     mode = os.environ.get("INPUT_MODE", default=None)
+    print(develpoment)
+    print(mode)
 
