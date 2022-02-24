@@ -10,10 +10,24 @@ clf=clf.fit(Xtrain,Ytrain)
 score=clf.score(Xtest,Ytest)#返回预测准确度accuracy
 print(score)
 def main():
-    Loading input values
+    #Loading input values
     print("::debug::Loading input values")
     development = os.environ.get("INPUT_DEVELOPMENT", default=None)
     mode = os.environ.get("INPUT_MODE", default=None)
     print(develpoment)
     print(mode)
+    
+    # Casting input values
+    print("::debug::Casting input values")
+    try:
+        mode = int(mode)
+    except TypeError as exception:
+        print(f"::debug::Could not cast mode to int: {exception}")
+        mode= None
+    except ValueError as exception:
+        print(f"::debug::Could not cast mode to int: {exception}")
+        mode = None
+    
+if __name__ == "__main__":
+main()
 
