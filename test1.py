@@ -29,5 +29,5 @@ def main():
         mode = None
     
 if __name__ == "__main__":
-main()
+    main()
 
