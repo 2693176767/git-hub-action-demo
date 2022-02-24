@@ -12,6 +12,6 @@ print(score)
 def main():
     # Loading input values
     print("::debug::Loading input values")
-    model_name = os.environ.get("INPUT_MODEL_NAME", default=None)
-    model_version = os.environ.get("INPUT_MODEL_VERSION", default=None)
+    devlopment = os.environ.get("INPUT_DEVELOPMENT", default=None)
+    mode = os.environ.get("INPUT_MODE", default=None)
 
