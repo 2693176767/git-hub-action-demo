@@ -14,6 +14,8 @@ def main():
     print("::debug::Loading input values")
     development = os.environ.get("INPUT_DEVELOPMENT", default=None)
     mode = os.environ.get("INPUT_MODE", default=None)
+    print(development)
+    print(mode)
     
     # Casting input values
     #print("::debug::Casting input values")
