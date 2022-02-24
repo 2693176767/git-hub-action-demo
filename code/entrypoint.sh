@@ -2,4 +2,4 @@
 
 set -e
 
-python /code/main.py
+python /code/test1.py
