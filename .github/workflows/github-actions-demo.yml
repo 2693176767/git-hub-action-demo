@@ -18,7 +18,7 @@ jobs:
       
       - name: Running dev env
         if: github.event.inputs.environment == 'development'#打印参数enviorment条件
-        run: echo "Running dev env with mode ${{ github.event.inputs.mode }}"
+        run: echo "Running dev env with environment ${{ github.event.inputs.environment }}"
         
       - name: Running prod env
         if: github.event.inputs.environment == 'production' #打印参数mode条件
@@ -29,7 +29,7 @@ jobs:
         id: deploy_test1 #id:deploy_test1
         uses: ./ #转到起始文件夹
         with:
-          enviorment: ${{github.event.inputs.development}}# 传入参数enviorment
+          enviorment: ${{github.event.inputs.environment}}# 传入参数environment
           mode: ${{github.event.inputs.mode}} #传入参数mode
           
         
