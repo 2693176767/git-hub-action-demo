@@ -1,15 +1,15 @@
 name: "DecisionTree Machine Learning Deploy Action"
 description: "Deploy a registered model in your DecisionTree Machine Learning Workspace with this GitHub Action"
 inputs:
-  development:
-    description: "Development of the model that will be deployed"
+  environment:
+    description: "Environment of the model that will be deployed"
     required: true
   mode:
     description: "Mode of the model that will be deployed"
     required: true
 outputs:
-  development:
-    value: ${{github.event.inputs.development}}
+  Environment:
+    value: ${{github.event.inputs.environment}}
   mode:
     value: ${{github.event.inputs.mode}}
 runs:
