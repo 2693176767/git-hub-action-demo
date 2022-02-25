@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Running dev env
-        if: github.event.inputs.environment == 'development'#打印参数enviorment条件
+        if: github.event.inputs.environment == 'development'           #打印参数environment条件
         run: echo "Running dev env with environment ${{ github.event.inputs.environment }}"
         
       - name: Running prod env
