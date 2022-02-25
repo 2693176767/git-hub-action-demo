@@ -12,9 +12,9 @@ print(score)#打印预测准确度score
 def main():
     # Loading input values
     print("::debug::Loading input values")
-    development = os.environ.get("INPUT_DEVELOPMENT", default=None)#获取环境变量development
+    environment = os.environ.get("INPUT_ENVIRONMENT", default=None)#获取环境变量environment
     mode = os.environ.get("INPUT_MODE", default=None)#获取环境变量mode
-    print(development)#打印环境变量development，没有输入故为空
+    print(environment)#打印环境变量environment，没有输入故为空
     print(mode)#打印环境变量mode，选择mode='development',故打印结果为development
 #调用main函数   
 if __name__ == "__main__":
