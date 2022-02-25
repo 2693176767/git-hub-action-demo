@@ -17,17 +17,6 @@ def main():
     print(development)
     print(mode)
     
-    # Casting input values
-    #print("::debug::Casting input values")
-    #try:
-        #model_version = int(model_version)
-    #except TypeError as exception:
-        #print(f"::debug::Could not cast model version to int: {exception}")
-        #model_version = None
-    #except ValueError as exception:
-        #print(f"::debug::Could not cast model version to int: {exception}")
-        #model_version = None
-    
 if __name__ == "__main__":
     main()
 
