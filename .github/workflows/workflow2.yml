@@ -1,8 +1,10 @@
 name: Check the workflow1
+
 on:
   workflow_run:
     workflows: [workflow1]
-    types: [completed]
+    types:
+      - completed
 
 jobs:
   on-success:
