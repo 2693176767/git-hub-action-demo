@@ -1,7 +1,7 @@
 name: Check the workflow1
 on:
   workflow_run:
-    workflows: [Build]
+    workflows: [workflow1]
     types: [completed]
 
 jobs:
@@ -16,9 +16,4 @@ jobs:
     steps:
       - run: echo 'The triggering workflow failed'
       
-    - name: Deploy model to test1 #名称:部署test1
-          id: deploy_test1 #id:deploy_test1
-          uses: ./ #转到起始文件夹
-          with:
-            environment: ${{github.event.inputs.environment}} #传入参数environment
-            mode: ${{github.event.inputs.mode}} #传入参数mode
+
