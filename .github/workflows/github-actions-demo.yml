@@ -14,6 +14,16 @@ on:
         description: 'Running mode'  #参数描述
 jobs:
   build:
+    on-success:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'success' }}
+      steps:
+        - run: echo 'The triggering workflow passed'
+    on-failure:
+      runs-on: ubuntu-latest
+      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering workflow failed'
     runs-on: ubuntu-latest
     steps:
       - name: Check Out Repository #检查仓库
