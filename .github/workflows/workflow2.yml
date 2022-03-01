@@ -2,7 +2,7 @@ name: Check the workflow1
 
 on:
   workflow_run:
-    workflows: [workflow1]
+    workflows: [GitHub Actions Demo]
     types:
       - completed
 
