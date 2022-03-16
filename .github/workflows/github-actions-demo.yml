@@ -13,8 +13,11 @@ on:
       mode:
         description: 'Running mode'  #参数描述
 jobs:
+  job1:
+    uses: ./.github/workflows/my_first_github_action.yml
   build:
     runs-on: ubuntu-latest
+    needs: job1
     steps:
       - name: Running Success   #检查workflow1是否运行成功
         if: ${{ github.event.workflow_run.conclusion == 'success' }}   #判断条件
