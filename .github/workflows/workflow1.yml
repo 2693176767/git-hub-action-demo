@@ -1,6 +1,5 @@
 name: GitHub Actions Demo
-on: 
-  workflow_call:
+on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
