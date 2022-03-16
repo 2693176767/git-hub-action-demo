@@ -14,7 +14,7 @@ on:
         description: 'Running mode'  #参数描述
 jobs:
   job1:
-    uses: ./.github/workflows/my_first_github_action.yml
+    uses: ./.github/workflows/workflow1.yml
   build:
     runs-on: ubuntu-latest
     needs: job1
