@@ -1,0 +1,17 @@
+name: Call a reusable workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  call-workflow:
+    uses: octo-org/example-repo/.github/workflows/workflow-1.yml@v1
+
+#   call-workflow-passing-data:
+#     uses: octo-org/example-repo/.github/workflows/workflow-B.yml@main
+#     with:
+#       username: mona
+#     secrets:
+#       token: ${{ secrets.TOKEN }}
