@@ -1,5 +1,5 @@
 name: test github action
-on:
+on: [push]
 #   workflow_run:
 #     workflows: [GitHub Actions Demo]
 #     types:
@@ -9,9 +9,9 @@ on:
 #       name:
 #         description: 'CI Number'
 #         required: true
-  push:
-    branches:
-     - master
+#   push:
+#     branches:
+#      - master
 jobs:
   job1:
     uses: ./.github/workflows/workflow-1.yml
