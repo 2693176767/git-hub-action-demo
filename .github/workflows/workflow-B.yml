@@ -15,7 +15,7 @@ jobs:
     name: Pass input and secrets to my-action
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/workflow-A@v1
+      - uses: ./.github/workflows/workflow-A.yml@v1
         with:
           username: ${{ inputs.username }}
           token: ${{ secrets.token }}
