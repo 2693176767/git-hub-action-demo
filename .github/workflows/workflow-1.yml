@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: Print name 
-        run: echo The username is ${{ inputs.username }}
+        uses: ./.github/workflows/workflow1.yml
