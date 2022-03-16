@@ -14,7 +14,7 @@ on:
      - master
 jobs:
   job1:
-    uses: ./.github/workflows/my_first_github_action.yml
+    uses: ./.github/workflows/workflow-1.yml
   train:
     runs-on: ubuntu-latest
     needs: job1
