@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: ./.github/workflows/workflow1.yml
-        with:
-          username: ${{ inputs.username }}
-          token: ${{ secrets.token }}
+#         with:
+#           username: ${{ inputs.username }}
+#           token: ${{ secrets.token }}
