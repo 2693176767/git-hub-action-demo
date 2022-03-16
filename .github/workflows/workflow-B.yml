@@ -2,20 +2,20 @@ name: Reusable workflow example
 
 on:
   workflow_call:
-    inputs:
-      username:
-        required: true
-        type: string
-    secrets:
-      token:
-        required: true
+#     inputs:
+#       username:
+#         required: true
+#         type: string
+#     secrets:
+#       token:
+#         required: true
 
 jobs:
   example_job:
-    name: Pass input and secrets to my-action
+    name: use workflow1
     runs-on: ubuntu-latest
     steps:
-      - uses: ./.github/workflows/my-action
+      - uses: ./.github/workflows/workflow1.yml
         with:
           username: ${{ inputs.username }}
           token: ${{ secrets.token }}
