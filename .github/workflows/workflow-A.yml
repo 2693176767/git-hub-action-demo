@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: .github/workflows/workflow-B.yml@v1
+    uses: /.github/workflows/workflow-B.yml@main
 
 #   call-workflow-passing-data:
 #     uses: octo-org/example-repo/.github/workflows/workflow-B.yml@main
