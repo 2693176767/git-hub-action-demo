@@ -6,9 +6,12 @@ permissions:
   pull-requests: write
 
 jobs:
-  triage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: /.github/workflows/workflow1.yml@master
-        with:
+  pycheck:
+    uses: ./.github/workflows/workflow1.yml@master
+    secrets:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+  get-env:
+    needs:[pycheck]
+    uses: ./.github/workflows/git-hub-action-demo.yml@master
+    secrets:
+    
